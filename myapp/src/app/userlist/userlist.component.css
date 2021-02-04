@@ -1,0 +1,41 @@
+/* css file is present in each component to provide additional styles to our webpage */
+
+table{
+    border:solid ;
+    border-width: 2px ;
+    font-size: 17px;
+}
+th{
+    text-align: center;
+    font-size: medium;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: solid;
+    border-width: 2px;
+}
+tr{
+    border: solid;
+    border-width: 2px;
+}
+td{
+    border: solid;
+    border-width: 2px;
+    font-weight: 600;
+} 
+ 
+button{
+    border-radius: 30px;
+    font-weight: bold;
+    width: 110px;
+}
+
+/* Style to change separator  */
+.breadcrumb-item + .breadcrumb-item::before {
+    content: ">";
+    background-color: white;
+    color: black;
+ }
+ .breadcrumb{
+     background-color: white;
+     font-size: 18px;
+     font-weight: 600;  
+ }

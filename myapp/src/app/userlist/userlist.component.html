@@ -1,0 +1,47 @@
+<div class="image"><br>
+    <div class="bs-example">
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">User</li>
+                <li class="breadcrumb-item">User List</li>
+            </ol>
+        </nav>
+    </div>
+
+    <div class="container mt-4">
+        <br>
+        <table class="table table-hover table-bordered ">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>NAME</th>
+                    <th>DEPARTMENT</th>
+                    <th>DATE OF JOINING</th>
+                    <th>EMAIL ID</th>
+                    <th>PHONE</th>
+                    <th>ADDRESS</th>
+                    <th> DELETE </th>
+                    <th> UPDATE </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='let user of users'>
+                    <td>{{user.id}}</td>
+                    <td>{{user.name}}</td>
+                    <td>{{user.department}}</td>
+                    <td>{{user.dateofjoining}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.phone}}</td>
+                    <td>{{user.address}}</td>
+
+
+
+                    <td><button class="btn btn-outline-danger" type="button" (click)="delete(user)">
+                            <i class="far fa-trash-alt"></i> Delete</button></td>
+                    <td><button class="btn btn-outline-success" type="button" (click)=postUpdate(user)>
+                            <i class="far fa-edit"></i> Update</button></td>
+            </tbody>
+        </table>
+
+    </div>
+</div>

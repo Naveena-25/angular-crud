@@ -1,0 +1,46 @@
+{
+  "users": [
+    
+    {
+      "id": 1,
+      "name": "krish",
+      "department": "IT",
+      "email": "krish@gmail.com",
+      "dateofjoining": "2020-09-10",
+      "phone": "6666666666",
+      "address": "Hyderabad"
+    },
+    {
+      "id": 2,
+      "name": "ramu",
+      "department": "IT",
+      "email": "ramu@gmail.com",
+      "dateofjoining": "2015-01-24",
+      "phone": "7777777777",
+      "address": "Bangalore"
+    },
+     {
+      "id": 3,
+      "name": "Sri",
+      "department": "IT",
+      "email": "Sri@gmail.com",
+      "dateofjoining": "2019-02-10",
+      "phone": "9122222255",
+      "address": "Andhra Pradesh"
+    }
+  ],
+  "profiles": [
+    {
+      "id": 1,
+      "emailId": "xyz@gmail.com",
+      "password": "Xyzzz1@",
+      "confirmpwd": "Xyzzz1@"
+    },
+    {
+      "emailId": "nav@gmail.com",
+      "password": "Nav1@2",
+      "confirmpwd": "Nav1@2",
+      "id": 2
+    }
+  ]
+}

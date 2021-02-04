@@ -1,0 +1,56 @@
+<div class="image"><br>
+    <div class="card">
+        <h3 style="text-align: center;">Edit User</h3>
+        <form #updateForm='ngForm' (ngSubmit)='postUpdate(updateForm)'>
+
+
+            <div class="form-group">
+                <label for="id">ID</label>
+                <input type="number" name="id" id="id" [(ngModel)]='id' class="form-control" readonly
+                    pattern="^[a-zA-Z ]{1,}$" readonly>
+            </div>
+
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input class="input-field" type="text" name="name" id="name" [(ngModel)]='name' class="form-control"
+                    required pattern="^[a-zA-Z ]{2,30}$">
+            </div>
+            <!--------------Department-------------->
+            <div class="form-group">
+                <label for="department">Department</label>
+                <input class="input-field" type="text" name="department" id="department" [(ngModel)]='department'
+                    class="form-control" required>
+
+            </div>
+            <!-------------Email Id----------------->
+            <div class="form-group">
+                <label for="email">Email Id</label>
+                <input class="input-field" type="email" name="email" id="email" [(ngModel)]='email' class="form-control"
+                    required pattern="^[a-zA-Z ]{2,30}$">
+            </div>
+
+            <!----------------------Joining Date---------------------->
+            <div class="form-group">
+                <label for="dateofjoining">Date of joining</label>
+                <input type="date" name="dateofjoining" id="dateofjoining" [(ngModel)]='dateofjoining'
+                    class="form-control" required>
+            </div>
+            <!------------------Mobile Number--------------------->
+            <div class="form-group">
+                <label for="phone">Mobile Number</label>
+                <input type="text" name="phone" id="phone" [(ngModel)]='phone' class="form-control" required
+                    minlength="10" pattern="[789][0-9]{9}">
+            </div>
+            <!-----------------Address-------------------------->
+            <div class="form-group">
+                <label for="address">Address</label>
+                <input class="input-field" type="text" name="address" id="address" [(ngModel)]='address'
+                    class="form-control" required pattern="^[a-zA-Z0-9 ]{2,30}$">
+            </div>
+
+            <button type="submit" class="btn btn-dark float-left" (click)='postUpdate(updateForm)'>Update</button>
+            <button type="reset" class="btn btn-dark pull-right" (click)="cancel()">Cancel</button>
+        </form>
+
+    </div>
+</div>

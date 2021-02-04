@@ -1,0 +1,97 @@
+<!-- <div class="image"><br> -->
+    <!----------------------Class For Breadcrumb-------------------->
+    <div class="bs-example">
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">User</li>
+                <li class="breadcrumb-item">Add User</li>
+            </ol>
+        </nav>
+    </div>
+
+    <div class="alert alert-primary" *ngIf='message'>{{message}}</div>
+    <div class="card">
+        <h3 style="text-align: center;">Add User</h3>
+        <form #addForm='ngForm' (ngSubmit)='addUser(addForm)'>
+            <!--------------User Name with pattern Validations---------------->
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input class="input-field" type="text" name="name" id="name" #name='ngModel' ngModel
+                    class="form-control" required pattern="^[a-zA-Z ]{2,30}$">
+                <div class="text-danger" *ngIf='name.touched && name.invalid'>
+                    <div *ngIf='name.errors.required'>
+                        *This field is mandatory
+                    </div>
+                    <div class="text-danger" *ngIf='name.errors.pattern'>Name Should contain Only Alphabets
+                    </div>
+                </div>
+            </div>
+            <!--------------Department Name with  Pattern Validations-------------->
+            <div class="form-group">
+                <label for="department">Department</label>
+                <input class="input-field" type="text" name="department" id="department" #department='ngModel' ngModel
+                    class="form-control" required pattern="^[a-zA-Z ]{2,30}$">
+                <div class="text-danger" *ngIf='department.touched && department.invalid'>
+                    <div *ngIf='department.errors.required'>
+                        *This field is mandatory
+                    </div>
+                    <div class="text-danger" *ngIf='department.errors.pattern'>Name Should contain Only Alphabets
+                    </div>
+                </div>
+            </div>
+            <!-------------Email Id----------------->
+            <div class="form-group">
+                <label for="email">Email ID</label>
+                <input type="email" name="email" id="email" #email='ngModel' ngModel class="form-control" required email
+                    pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,}">
+                <div *ngIf='email.touched && email.invalid'>
+                    <div class="text-danger" *ngIf='email.errors.required'>
+                        *This field is mandatory
+                    </div>
+                    <div class="text-danger" *ngIf='email.errors.pattern'>
+                        Please enter a Valid Email Address
+                    </div>
+                </div>
+            </div>
+
+            <!----------------------Joining Date---------------------->
+            <div class="form-group">
+                <label for="dateofjoining">Date of joining</label>
+                <input type="date" name="dateofjoining" id="dateofjoining" #dateofjoining='ngModel' ngModel
+                    class="form-control" required>
+                <div *ngIf='dateofjoining.touched && dateofjoining.invalid'>
+                    <div class="text-danger" *ngIf='dateofjoining.errors.required'>*This Field is Mandatory</div>
+                </div>
+            </div>
+            <!------------------Mobile Number--------------------->
+            <div class="form-group">
+                <label for="phone">Mobile Number</label>
+                <input type="number" name="phone" id="phone" #phone='ngModel' ngModel class="form-control" required
+                    minlength="10" pattern="[789][0-9]{9}">
+                <div *ngIf='phone.touched && phone.invalid'>
+                    <div class="text-danger" *ngIf='phone.errors.required'>*This Field is Mandatory</div>
+                    <div *ngIf=phone.errors.pattern>
+                        <div class="text-danger">Enter Valid Mobile Number</div>
+                    </div>
+                </div>
+            </div>
+            <!-----------------Address-------------------------->
+            <div class="form-group">
+                <label for="address">Address</label>
+                <input class="input-field" type="text" name="address" id="address" #address='ngModel' ngModel
+                    class="form-control" required pattern="^[a-zA-Z0-9 ]{2,30}$">
+                <div class="text-danger" *ngIf='address.touched && address.invalid'>
+                    <div *ngIf='address.errors.required'>
+                        *This field is mandatory
+                    </div>
+                    <div class="text-danger" *ngIf='name.errors.pattern'>Name Should contain Only Alphabets
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-dark float-left" [disabled]=addForm.invalid>Add User</button>
+            <button type="reset" class="btn btn-dark pull-right" (click)="cancel()">Cancel</button>
+        </form>
+    </div>
+
+<!-- </div> -->

@@ -1,0 +1,83 @@
+<div class="alert alert-primary" *ngIf='message'>{{message}}</div>
+<div class="des">
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quo veniam voluptatem alias dolores
+    magni dicta odit molestias! Fugiat et reprehenderit ipsam eum explicabo tenetur voluptatum quidem vero odit ipsa.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, deserunt,
+    voluptate repudiandae eveniet cupiditate praesentium ratione nihil quas accusantium minima dicta consequuntur,
+    quaerat rem minus nisi suscipit fugit adipisci quidem.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi reprehenderit voluptatem,
+    ea culpa dolorum asperiores laborum dolores id deleniti ab.
+    Quaerat dolor est praesentium reiciendis repellat atque saepe dignissimos quo?
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde expedita libero doloribus asperiores
+    quibusdam quos aut qui hic enim,
+    pariatur sint nihil omnis autem veritatis blanditiis excepturi, voluptatem eveniet laudantium.</p>
+
+</div>
+
+
+
+<div class="card shadow1">
+
+
+  <!--Card content-->
+  <div class="card-body">
+
+    <h5>
+      Register
+    </h5>
+    <form #registerform='ngForm'>
+      <!--------------------Input for email Id along with validations-------------------->
+      <div class="form-group">
+        <label for="name">Email ID</label>
+        <input type="email" name="emailId" id="emailId" #emailId='ngModel' ngModel class="form-control" required email
+          pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,}">
+        <div *ngIf='emailId.touched && emailId.invalid'>
+          <div class="text-danger" *ngIf='emailId.errors.required'>
+            *This field is mandatory
+          </div>
+          <div class="text-danger" *ngIf='emailId.errors.pattern'>
+            Please enter a Valid Email Address
+          </div>
+        </div>
+      </div>
+      <!-----------------------------------Password---------------------------------------->
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" placeholder="password" #password='ngModel' ngModel
+          class="form-control" required password pattern="^[A-Za-z\d$@$!%*#?&]{7}">
+        <div *ngIf='password.touched && password.invalid'>
+          <div class="text-danger" *ngIf='password.errors.required'>*This Field is Mandatory</div>
+          <div class="text-danger" *ngIf=password.errors.pattern>
+            <div class="text-danger">Password should be atleast 7 characters long</div>
+          </div>
+        </div>
+      </div>
+      <!--------------------------------Confirm Password----------------------------------->
+      <div class="form-group">
+        <label for="confirmpwd"> Confirm Password</label>
+        <input type="password" name="confirmpwd" id="confirmpwd" placeholder="confirm password" #confirmpwd='ngModel'
+          ngModel class="form-control" required password pattern="^[A-Za-z\d$@$!%*#?&]{7}">
+        <div *ngIf='confirmpwd.touched && confirmpwd.invalid'>
+          <div class="text-danger" *ngIf='confirmpwd.errors.required'>*This Field is Mandatory</div>
+          <div class="text-danger" *ngIf=confirmpwd.errors.pattern>
+            <div class="text-danger">Password should be atleast 7 characters long</div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="text-center">
+        <!-------------------------------Register Button---------------------------->
+        <button class="btn btn-primary" type="submit" (click)='regUser(registerform.value)'>Register</button>
+      </div>
+      <br>
+      <!-- ---------------Login(if you don't have an account please Login)----------->
+      <p style="font-size: medium;">Already I have an account.
+        <a routerLink="/">Login</a>
+      </p>
+    </form>
+
+    <!-- Form -->
+
+  </div>
+
+</div>
